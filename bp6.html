@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Didact Gothic' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Portfolio Website - Dark Theme</title>
+    <style>
+        body {
+            font-family: 'Didact Gothic';
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #121212;
+            color: #f5f5f5;
+            background-image: url('lap.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+           
+        }
+  
+
+    
+        .container {
+            display: flex;
+            width: 100%;
+            margin: 20px;
+        }
+
+       
+        .left-column {
+            width: 30%;
+            background-color: #1e1e1e;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            margin: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+        }
+        .left-column::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for WebKit-based browsers */
+        }
+        .right-column::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for WebKit-based browsers */
+        }
+        .left-column {
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+        .left-column::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('lap.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px); /* Adds the blur effect */
+            opacity: 0.5; /* Adjusts transparency */
+            z-index: -1; /* Places the background behind the content */
+            border-radius: 10px; /* Matches the container's rounded corners */
+        }
+        .profile-pic {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+        .email {
+            display: flex;
+            align-items: center; /* Vertically align icon and text */
+            gap: 10px; /* Space between icon and text */
+            margin-bottom: 15px; /* Spacing between sections */
+            text-align: left;
+            margin-left:30px;
+        }
+        .email-icon {
+            width: 40px; /* Adjust icon size */
+            height: 40px;
+            flex-shrink: 0; /* Prevent icon from resizing */
+        }
+        .email div {
+            display: flex;
+            flex-direction: column; /* Stack "Email" and "Email ID" vertically */
+        }
+        .right-column {
+            width: 70%;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .introduction-menu {
+            position: relative;
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        .nav {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            gap: 15px;
+            background-color: #3f3f3f;
+            padding: 15px;
+            border: 1px solid #3d3d3d;
+            border-radius: 5px;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+            color: #abd7f2
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #2a2a2a;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2 {
+            color: #ffffff;
+        }
+       /* Education Timeline Section */
+#education {
+    padding: 20px 20px;
+    background-color: #2a2a2a; /* Background color for the section */
+}
+
+.section-title {
+    text-align: left;
+    
+    margin-bottom: 10px;
+    color: #ffffff; /* Title color */
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.timeline-dot {
+    width: 15px;
+    height: 15px;
+    background-color: #3498db; /* Primary color for the dot */
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+}
+
+.timeline-item:hover .timeline-dot {
+            transform: scale(1.5); /* Scale the dot */
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-10px); /* Translate content */
+        }
+.timeline-content {
+    margin-left: 30px;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(158, 153, 153, 0.1);
+    position: relative;
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: #ffffff; /* Heading color */
+    margin-bottom: 5px;
+}
+
+.timeline-date {
+    display: block;
+    font-size: 0.9rem;
+    color: #ffffff; /* Date color */
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ffffff; /* Text color */
+}
+
+/* Connect timeline dots */
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 15px;
+    width: 1px;
+    height: calc(100% - 15px);
+    background-color: #a71a1a; /* Line color */
+    z-index: -1;
+}
+
+.timeline-item:last-child:before {
+    display: none; /* Remove the line for the last item */
+}
+
+        .underline {
+    width: 50%; /* Adjust the width as needed */
+    height: 2px; /* Thickness of the line */
+    background-color: #abd7f2; /* Line color */
+    margin: 10px auto; /* Centers the line below the name */
+    border-radius: 5px;
+    margin-bottom:20px;; /* Rounded edges for aesthetics */
+}
+
+.platforms {
+    display: flex;
+    justify-content: space-around; /* Spacing between items */
+    flex-wrap: wrap; /* Wrap to next line on smaller screens */
+    margin-top: 20px;
+    gap: 20px; /* Space between items */
+    
+}
+
+
+        
+
+        
+
+.overlaycontainer {
+    position: relative;
+    width: 185px; /* Fixed size for consistency */
+    height: 185px;
+    border-radius: 50%; /* Circular appearance */
+    overflow: hidden; /* Ensure overlay stays within the circle */
+    box-shadow: 2px 0 5px rgba(72, 71, 71, 0.5); 
+    margin: 10px;
+}
+
+.platform-image {
+    width: 100%; /* Automatically adapt to container size */
+    height: 100%; /* Automatically adapt to container size */
+    object-fit: cover; /* Maintain aspect ratio and fill the circle */
+    border-radius: 50%; /* Circular appearance */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth fade-in/out effect */
+    background-color: rgba(73, 75, 76, 0.8); /* Semi-transparent overlay */
+    border-radius: 50%; /* Keep the overlay circular */
+}
+
+.overlaycontainer:hover .overlay {
+    opacity: 1; /* Make the overlay visible on hover */
+}
+
+.overlaycontainer:hover {
+    transform: translateY(-10px); /* Lifts the image upwards */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Adds a more pronounced shadow effect */
+}
+       
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+/* Default state for hidden items */
+
+.skills-container {
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .skill {
+            margin: 20px 0;
+        }
+
+        .skill-name {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            width: 80%; /* Shortened the width */
+            height: 15px; /* Increased the height */
+            background-color: #444;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #3498db;
+            width: 0; /* Default progress width */
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+       
+        .parent-container {
+        
+            display: flex;
+            align-items: center;
+             /* Maintain aspect ratio */
+            width:100%;
+            height:100%;
+            overflow:auto;
+        }
+
+        
+        body::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for WebKit-based browsers */
+        }
+        /* Hide the scrollbar arrows and design the scrollbar */
+div.parent-container::-webkit-scrollbar {
+    width: 6px; /* Reduced width of the scrollbar */
+    height: 6px; 
+   /* Set the width of the scrollbar */
+}
+
+div.parent-container::-webkit-scrollbar-thumb {
+  background-color: rgb(124, 181, 231); /* Set the color of the scrollbar */
+  border-radius: 5px;
+  height: 50%; /* Optional: adds rounded corners */
+}
+
+div.parent-container::-webkit-scrollbar-track {
+  /* Set the background color of the track */
+  border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+div.parent-container::-webkit-scrollbar-button {
+  display: none; /* Hide the scrollbar arrows */
+}
+
+
+        .flip-container {
+            perspective: 1000px;
+            margin: 20px;
+            margin-left: 40px;
+        }
+
+        .flip-card {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .flip-container:hover .flip-card {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-inner {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front img {
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .flip-card-back {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transform: rotateY(180deg);
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #ccc;
+        }
+       
+        .cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .card {
+    width: 300px;
+  }
+
+  .card-top,
+  .card-bottom {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card-top {
+    margin-bottom: 10px; /* Creates gap between the top and bottom containers */
+  }
+
+  .card-top img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .card-top h1 {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 10px 0;
+  }
+
+  .card-top h1:hover {
+    color: rgb(124, 181, 231);
+    transition: color 0.3s;
+  }
+
+  .card-bottom p {
+    color: #bbb;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .card-bottom:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+  }
+ 
+  #hobbies {
+      padding: 20px;
+      margin: 20px;
+      animation: fadeIn 1s;
+    }
+
+   
+
+    .hobbies-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .hobbies-list div {
+      background: #383737; /* Lighter card background */
+      border: 1px solid #333;
+      padding: 20px; /* Increased padding for better spacing */
+      font-size: 1.2rem; /* Increased font size for readability */
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      text-align: center;
+      cursor: pointer; /* Pointer cursor for interactivity */
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .hobbies-list div:hover {
+      background-color: #bbdefb; /* Highlighted color on hover */
+      transform: scale(1.1) rotate(-3deg); /* Scale up and tilt slightly */
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.7); /* More pronounced shadow */
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    #resumeButton {
+      display: block;
+      margin: 40px auto;
+      padding: 30px 80px;
+      font-size: 1rem;
+      background-color: #1e88e5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #resumeButton:hover {
+      background-color: #1565c0;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .button-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      padding: 20px;
+      font-size: 1.2rem;
+      background-color: #1f1f1f;
+      color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(79, 78, 78, 0.5);
+      transition: background-color 0.3s ease, transform 0.2s;
+      text-decoration: none;
+    }
+
+    .button-box:hover {
+      background-color: #bed3ec;
+      transform: scale(1.1);
+      color: #121212;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #333;
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 700px;
+      width: 80%;
+      text-align: left;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      font-size: 1.6rem;
+      color: #bbdefb;
+    }
+
+    .modal-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .close-btn {
+      background-color: #e53935;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
+      font-size: 1.2rem;
+    }
+
+    .close-btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .wtcontainer {
+      width: 60%; /* Reduced width */
+      display: flex;
+      justify-content: space-between; /* Placing items in the same row */
+      margin: 40px;
+    }
+
+    .box {
+      display: flex;
+      align-items: center;
+      background-color: #1f1f1f; /* Dark background for boxes */
+      border-radius: 10px;
+      margin-right: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      flex: 0 0 48%; /* Adjust width of each box */
+    }
+
+    .box img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .box .wtcontent {
+      flex-grow: 1;
+    }
+
+    .box .wt-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #bbdefb; /* Light blue color for the wt-title */
+    }
+
+    .box .description {
+      font-size: 1rem;
+      color: #ddd; /* Light grey color for description */
+    }
+
+    /* Responsive layout */
+    @media screen and (max-width: 768px) {
+      .wtcontainer {
+        flex-direction: column;
+      }
+
+      .box {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px; /* Add space between boxes */
+      }
+
+      .box img {
+        margin-bottom: 15px;
+      }
+    }
+    .image-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px; /* Space between the images */
+    }
+
+    /* Image Style */
+    .contact-image {
+      width: 40px; /* Small size */
+      height: 40px; /* Small size */
+      border-radius: 50%;
+      border: 2px solid #000000;
+    }
+
+    /* Hover effect for images */
+    .contact-image:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column">
+            <img src="bala.jpg" alt="Profile Picture" class="profile-pic">
+            <h1>Harishbala</h1>
+            <div class="underline"></div>
+            
+            <div class="email">
+                <img src="field.png" alt="Field Icon" class="email-icon">
+                <div>
+                    <strong>Field:</strong>
+                    <p>Computer Science</p>
+                </div>
+            </div>
+            <div class="email">
+                <img src="birthday.png" alt="Birthday Icon" class="email-icon">
+                <div>
+                    <strong>Birthday:</strong>
+                    <p>30 November, 2004</p>
+                </div>
+            </div>
+            <div class="email">
+                <img src="location.png" alt="Location Icon" class="email-icon">
+                <div>
+                    <strong>Location:</strong>
+                    <p>Chennai, India</p>
+                </div>
+            </div>
+
+            <div>&nbsp;</div>
+        
+            <div class="image-container">
+                
+                <div>
+                    <a href="harishbalapurushothaman@gmail.com"><img src="github.png" alt="Contact 1" class="contact-image"></a>&nbsp;&nbsp;
+                    <a href="https://www.linkedin.com/in/harishbala-purushothaman-5b5869270/"><img src="link.png" alt="Contact 2" class="contact-image"></a>&nbsp;&nbsp;
+                    <a href="https://github.com/Harishbala07"><img src="mail1.png" alt="Contact 3" class="contact-image"></a>&nbsp;&nbsp;
+                </div>
+            </div>
+
+              
+        </div>
+        <div class="right-column" >
+            <div class="introduction-menu">
+                <h1 style="margin-left: 10px;">My Portfolio</h1>
+                
+                <div class="nav">
+                    <a href="#" id="intro-link" style="color:#abd7f2;">About</a>
+                    <a href="#" id="resume-link">Proficiency</a>
+                    <a href="#" id="projects-link">Projects</a>
+                    
+                </div>
+                <div class="section" id="intro-section" style="margin-left: 5px;">
+                    <h2 class="section-title"><strong>About Me</strong></h2>
+                    <p style="font-size: 20px;">I'm a web developer and a web designer with a keen passion to explore the techie world and to make some contributions to the technological world. I specialize in turning ideas into beautifully crafted websites and into various attractive posters with user friendly applications</p>
+                    
+                    
+                    <section id="education">
+                        <h2 class="section-title">Education</h2>
+                        <div class="timeline">
+                            <div class="timeline-item animate-on-scroll">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>Bachelor of Engineering in Computer Science</h3>
+                                    <span class="timeline-date">2022 - 2026</span>
+                                    <p> <Strong>Sri Venkateshwara College of Engineering, Sriperumbadur</Strong></p>
+                                    <p>Studying core concepts of computer science and programming, focusing on web development and Web Design</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item animate-on-scroll">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>XII &nbsp;(Senior Secondary)</h3>
+                                    <span class="timeline-date">2021 - 2022</span>
+                                    <p><strong>Velammal Matriculation Higher Secondary School, Surapet</strong></p>
+                                    <p>Completed coursework in mathematics, physics, and computer science, achieving a strong academic record.</p>
+                                   
+                                </div>
+                            </div>
+                            <div class="timeline-item animate-on-scroll">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3> X &nbsp; (High School)</h3>
+                                    <span class="timeline-date">2019 - 2020</span>
+                                    <p><strong>Velammal Matriculation Higher Secondary School, Surapet</strong></p>
+
+                                    <p>Excelled in foundational subjects, particularly mathematics and science, fostering an interest in technology.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    
+                    <h2 class="newunderline"> Coding Platforms</h2>
+                    <div class="platforms">
+                        <a href="https://github.com/Harishbala07"><div class="overlaycontainer">
+                            <img src="github.png" alt="GitHub" class="platform-image">
+                            <div class="overlay">
+                                <div class="text">GitHub</div>
+                            </div>
+                        </div></a>
+                        <a href="https://www.hackerrank.com/profile/purushothamanb31"><div class="overlaycontainer">
+                            <img src="hack.png" alt="Hackerrank" class="platform-image">
+                            <div class="overlay">
+                                <div class="text">Hackerrank</div>
+                            </div>
+                        </div></a>
+                        <a href="https://leetcode.com/u/purushothamanb345/"><div class="overlaycontainer">
+                            <img src="leet.png" alt="LeetCode" class="platform-image">
+                            <div class="overlay">
+                                <div class="text">LeetCode</div>
+                            </div>
+                        </div></a>
+                    </div>
+                    <h2>Hobbies & Interests</h2>
+                    <div id="hobbies">
+                        
+                        <div class="hobbies-list">
+                          <div>Drawing</div>
+                          <div>Cricket</div>
+                          <div>Designing</div>
+                          
+                        </div>
+                    </div>
+
+                    
+                   
+
+                </div>
+                <div class="section" id="resume-section" style="display: none;">
+                    <h2>Skills</h2>
+                    <div class="skills-container">
+                        <div class="skill">
+                            <div class="skill-name"><strong>HTML</strong> &nbsp; <span style="color:#918e8e">90%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                
+                        <div class="skill">
+                            <div class="skill-name"><strong>CSS</strong> &nbsp; <span style="color:#918e8e">85%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                
+                        <div class="skill">
+                            <div class="skill-name"><strong>JavaScript</strong> &nbsp; <span style="color:#918e8e">75%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                
+                        <div class="skill">
+                            <div class="skill-name"><strong>Python </strong> &nbsp; <span style="color:#918e8e">80%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                
+                        <div class="skill">
+                            <div class="skill-name"><strong>C</strong> &nbsp; <span style="color:#918e8e">65%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-name"><strong>C++ </strong>&nbsp; <span style="color:#918e8e">65%</span></div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <h2>What I'm Doing:</h2>
+                    <div class="wtcontainer">
+                        <!-- First Box -->
+                        <div class="box">
+                          <img src="webdev.png" alt="Image 1">
+                          <div class="wtcontent">
+                            <div class="wt-title">Web Development</div>
+                            
+                          </div>
+                        </div>
+                    
+                        <!-- Second Box -->
+                        <div class="box">
+                          <img src="webdesign.png" alt="Image 2">
+                          <div class="wtcontent">
+                            <div class="wt-title">Web Design&nbsp;</div>
+                            
+                          </div>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <a href="javascript:void(0);" class="button-box" id="wtButton1">Online Courses</a>
+                        <a href="javascript:void(0);" class="button-box" id="wtButton2">Design and Development</a>
+                        <a href="javascript:void(0);" class="button-box" id="wtButton3">Web-dev Skills</a>
+                    </div>
+                    
+                      <!-- Modal for Online Courses -->
+                    <div id="resumeModal1" class="modal">
+                        <div class="modal-content">
+                          <button class="close-btn" id="closeModal1">&times;</button>
+                          <h3>Foundations of Web Development and Programming Skills Acquisition</h3>
+                          <p>I have completed two to three online courses related to Web development in the "SOLOLEARN" application and I have been working on some of the programming courses like C, Java with some enough knowledge.</p>
+                        </div>
+                    </div>
+                    
+                      <!-- Modal for Design and Development -->
+                    <div id="resumeModal2" class="modal">
+                        <div class="modal-content">
+                          <button class="close-btn" id="closeModal2">&times;</button>
+                          <h3>My Progress and Practical Application in Web Development and Design</h3>
+                          <p>I have created websites with my basic knowledge, and in addition, I'm in the process of building a successful project.</p>
+                        </div>
+                    </div>
+                    
+                      <!-- Modal for Programming Skills -->
+                    <div id="resumeModal3" class="modal">
+                        <div class="modal-content">
+                          <button class="close-btn" id="closeModal3">&times;</button>
+                          <h3>My Journey towards Web Development and Design</h3>
+                          <p>I wish to become a successful web developer and a web designer, I trust my creative thoughts and the ability to viusalize my creative thoughts into a complete version of my idea. My skills are enough to make a basic website and I'm learning new concepts of web developing and designing more and more.</p>
+                        </div>
+                    </div>
+                      <br>
+                    <h2>Certifications</h2>
+                    <div class="parent-container">
+                        <a href="https://drive.google.com/file/d/1UQkdRwOP66yE19ruKZdlLjcNy20tayFT/view"><div class="flip-container">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="solo.png" alt="Image">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="description">
+                                            Introduction to HTML
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title">HTML Introduction</div>
+                        </div></a>
+                        <a href="https://drive.google.com/file/d/1UH8EU2uMpzr2Zh7p67DSrirjpeLrnyCS/view"><div class="flip-container">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="udemy.png" alt="Image">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="description">
+                                            Introduction to JavaScript
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title">Javascript</div>
+                        </div></a>
+                        <a href="https://drive.google.com/file/d/1UVS_pqoH6rb6TYbTiJYXAOQbJCCSRdl5/view"><div class="flip-container">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="great.png" alt="Image">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="description">
+                                            Introduction to Machine Learning and Basics 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title">Machine Learning</div>
+                        </div></a>
+                        <a href="https://drive.google.com/file/d/1Uc6qTQ_nHnqnA9aBJmkuq5dfpn8mfkt_/view"><div class="flip-container">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="nptel.png" alt="Image">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="description">
+                                            Certified in CyberSecurity and Privacy
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title">Cyber Security</div>
+                        </div></a>
+                        <a href="https://drive.google.com/file/d/1UcbZZS7jlxEkgF3LmlI6keUfHU_2QzJD/view"><div class="flip-container">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="hack (1).png" alt="Image">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <div class="description">
+                                            Certified with Python Skill test
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title">Python Basics</div>
+                        </div></a>
+                    </div>
+                      
+                      <div>
+                        <h2>Resume</h2>
+                        <a href="https://drive.google.com/file/d/1eRnUeCiPzHB9KXgx0kFIiWYf0PdgP75q/view"><button id="resumeButton">View Resume</button></a>
+                      </div>
+
+                    
+                  
+                </div>
+                <div class="section" id="projects-section" style="display: none;">
+                    <h2>Projects</h2>
+                    <div class="cards-container">
+                        <a href="https://harishbala07.github.io/weather/"><div class="card">
+                          <div class="card-top">
+                            <img src="wth.jpg" alt="Weather">
+                            <h1>Weather Prediction</h1>
+                          </div>
+                          <div class="card-bottom">
+                            <p>Weather prediction using APIs involves fetching real-time or forecasted weather data from online services like OpenWeather or Weatherstack. These APIs provide detailed information such as temperature, humidity, and precipitation, enabling developers to integrate weather features.</p>
+                          </div>
+                        </div></a>
+                      
+                        <a href="https://harishbala07.github.io/portfolio/"><div class="card">
+                          <div class="card-top">
+                            <img src="pf.png" alt="Portfolio">
+                            <h1>Portfolio</h1>
+                          </div>
+                          <div class="card-bottom">
+                            <p>My portfolio website showcases my skills, interests, projects, certifications and achievements in a visually appealing format. It serves as a digital resume, helping professionals like designers, developers, and artists to connect with me or have better communication with official clients.</p>
+                          </div>
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const resumeLink = document.getElementById('resume-link');
+        const projectsLink = document.getElementById('projects-link');
+        const introLink = document.getElementById('intro-link');
+        const resumeSection = document.getElementById('resume-section');
+        const projectsSection = document.getElementById('projects-section');
+        const introsec = document.getElementById('intro-section');
+
+        resumeLink.addEventListener('click', () => {
+            resumeSection.style.display = 'block';
+            projectsSection.style.display = 'none';
+            introsec.style.display = 'none';
+            resumeLink.style.color = '#abd7f2';
+            projectsLink.style.color='#ffffff';
+            introLink.style.color='#ffffff';
+        });
+
+        projectsLink.addEventListener('click', () => {
+            resumeSection.style.display = 'none';
+            projectsSection.style.display = 'block';
+            introsec.style.display = 'none';
+            projectsLink.style.color='#abd7f2';
+            introLink.style.color='#ffffff';
+            resumeLink.style.color = '#ffffff';
+        });
+
+        introLink.addEventListener('click', () => {
+            resumeSection.style.display = 'none';
+            projectsSection.style.display = 'none';
+            introsec.style.display = 'block';
+            introLink.style.color='#abd7f2';
+            projectsLink.style.color='#ffffff';
+            resumeLink.style.color = '#ffffff';
+
+        });
+
+
+        const wtButton1 = document.getElementById('wtButton1');
+    const resumeModal1 = document.getElementById('resumeModal1');
+    const closeModal1 = document.getElementById('closeModal1');
+
+    wtButton1.addEventListener('click', () => {
+      resumeModal1.style.display = 'flex';
+    });
+
+    closeModal1.addEventListener('click', () => {
+      resumeModal1.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target === resumeModal1) {
+        resumeModal1.style.display = 'none';
+      }
+    });
+
+    // For Design and Development Button Modal
+    const wtButton2 = document.getElementById('wtButton2');
+    const resumeModal2 = document.getElementById('resumeModal2');
+    const closeModal2 = document.getElementById('closeModal2');
+
+    wtButton2.addEventListener('click', () => {
+      resumeModal2.style.display = 'flex';
+    });
+
+    closeModal2.addEventListener('click', () => {
+      resumeModal2.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target === resumeModal2) {
+        resumeModal2.style.display = 'none';
+      }
+    });
+
+    // For Programming Skills Button Modal
+    const wtButton3 = document.getElementById('wtButton3');
+    const resumeModal3 = document.getElementById('resumeModal3');
+    const closeModal3 = document.getElementById('closeModal3');
+
+    wtButton3.addEventListener('click', () => {
+      resumeModal3.style.display = 'flex';
+    });
+
+    closeModal3.addEventListener('click', () => {
+      resumeModal3.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+      if (event.target === resumeModal3) {
+        resumeModal3.style.display = 'none';
+      }
+    });
+
+      </script>
+</body>
+</html>
